@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+let port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
@@ -69,6 +70,6 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log("server has started on port 5000");
 });
